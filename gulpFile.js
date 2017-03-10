@@ -6,16 +6,21 @@ var browserSync = require('browser-sync').create();
 gulp.task('serve', ['templates'], function() {
 
     browserSync.init({
-        server: "./"
+        server: "./",
+        open:false
     });
+    
     gulp.watch('./src/*.jade', ['templates']);
+    gulp.watch('./config/*.js', ['templates']);
+
     gulp.watch("./index.html").on('change', browserSync.reload);
 });
 
 
  
 gulp.task('templates', function() {
-  const products = require('./config/products')
+  delete require.cache[require.resolve('./config/products')]
+  var products = require('./config/products')
   const YOUR_LOCALS = {products:products}
  
   gulp.src('./src/*.jade')

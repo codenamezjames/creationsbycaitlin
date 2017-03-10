@@ -55,8 +55,8 @@ html
           h2 Header
         section#features.container
           .row
-            each product in products
-              if(product.featured)
+            each product, i in products
+              if(product.featured && i < 3)
                 .4u(class='12u(mobile)')
                   // Feature
                   section
@@ -67,7 +67,7 @@ html
                     p #{product.blurb}
           ul.actions
             li
-              a.button.icon.fa-file(href='#') Tell Me More
+              a.button.icon.fa-file(href='#') See All
               
       // Banner
       #banner-wrapper
@@ -75,7 +75,7 @@ html
           section#banner.container
             p
               | Quality creations 
-              strong for your home
+              strong for your home and Family
               | .
 
       // Main
