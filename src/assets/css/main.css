@@ -2004,6 +2004,10 @@
 				}
 
 		/* Sidebar */
+		#sidebar{
+			height:730px;
+			overflow:scroll;
+		}
 
 			#sidebar > section,
 			#sidebar > article {

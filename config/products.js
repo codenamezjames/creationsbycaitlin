@@ -22,14 +22,14 @@ const products = [
         featured:true
     },
     {
-        title:'Yetti Decal',
+        title:'Ozark Decal',
         images:[
             {
-                src:'src/images/cup.jpg',
+                src:'src/images/ozark-kre.jpg',
                 alt:'Yetti cup with decal'
             }
         ],
-        blurb:'The ultimate fashion and function!',
+        blurb:'Stay kool while staying cool',
         featured:true
     },
     {
