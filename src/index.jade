@@ -23,31 +23,35 @@ html
             a(href='index.html') Creations By Caitlin
           p Crafts and creations designed to entice
           // Nav
-            <nav id="nav">
-            <ul>
-            <li><a class="icon fa-home" href="index.html"><span>Introduction</span></a></li>
-            <li>
-            <a href="#" class="icon fa-bar-chart-o"><span>Dropdown</span></a>
-            <ul>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Magna phasellus</a></li>
-            <li><a href="#">Etiam dolore nisl</a></li>
-            <li>
-            <a href="#">Phasellus consequat</a>
-            <ul>
-            <li><a href="#">Magna phasellus</a></li>
-            <li><a href="#">Etiam dolore nisl</a></li>
-            <li><a href="#">Phasellus consequat</a></li>
-            </ul>
-            </li>
-            <li><a href="#">Veroeros feugiat</a></li>
-            </ul>
-            </li>
-            <li><a class="icon fa-cog" href="left-sidebar.html"><span>Left Sidebar</span></a></li>
-            <li><a class="icon fa-retweet" href="right-sidebar.html"><span>Right Sidebar</span></a></li>
-            <li><a class="icon fa-sitemap" href="no-sidebar.html"><span>No Sidebar</span></a></li>
-            </ul>
-            </nav>
+          nav#nav
+            ul
+              li
+                a.icon.fa-home(href='index.html')
+                  span Home
+              li
+                a.icon.fa-shopping-cart(href='#')
+                  span Shop
+                ul
+                  li
+                    a(href='#') All
+                  li
+                    a(href='#') Kitchen
+                  li
+                    a(href='#') Home
+                  li
+                    a(href='#') Garden
+                  li
+                    a(href='#') Other
+              li
+                a.icon.fa-info(href='#')
+                  span About
+              li
+                a.icon.fa-retweet(href='#')
+                  span Stuff
+              li
+                a.icon.fa-phone(href='#')
+                  span Connect
+
 
       // Features
       #features-wrapper
@@ -93,18 +97,11 @@ html
                       div
                         strong Im Caitlin
                 a.image.featured(href='#')
-                  img(src='src/images/pic04.jpg', alt='')
+                  img(src='src/images/family.jpg', alt='', style="transform: scaleX(-1);")
                 h3 Meet the family
                 p
-                  | Phasellus laoreet massa id justo mattis pharetra. Fusce suscipit
-                  | ligula vel quam viverra sit amet mollis tortor congue. Sed quis mauris
-                  | sit amet magna accumsan tristique. Curabitur leo nibh, rutrum eu malesuada
-                  | in, tristique at erat lorem ipsum dolor sit amet lorem ipsum sed consequat
-                  | magna tempus veroeros lorem sed tempus aliquam lorem ipsum veroeros
-                  | consequat magna tempus lorem ipsum consequat Phasellus laoreet massa id
-                  | justo mattis pharetra. Fusce suscipit ligula vel quam viverra sit amet
-                  | mollis tortor congue. Sed quis mauris sit amet magna accumsan tristique.
-                  | Curabitur leo nibh, rutrum eu malesuada in, tristique at erat.
+                  | My name is Caitlin, i’m a wife and a mother of one. I love crafting and teaching my little one. My husband and i have been creating these crafts for the past 3 years we love
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem similique dolores, eligendi illo consequatur, dolor maiores? Laudantium corrupti distinctio, odit dolores ullam sit quaerat, laboriosam nostrum porro numquam esse eos?
                 ul.actions
                   li
                     a.button.icon.fa-file(href='#') Continue Reading
@@ -113,30 +110,16 @@ html
               // Excerpts
               section
                 ul.divided
-                  li
-                    // Excerpt
-                    article.box.excerpt
-                      header
-                        h3
-                          a(href='#') Just another post
-                      a.image.fit(href='#')
-                        img(src='src/images/pic06.jpg', alt='')
-                  li
-                    // Excerpt
-                    article.box.excerpt
-                      header
-                        h3
-                          a(href='#') More images
-                      a.image.fit(href='#')
-                        img(src='src/images/pic06.jpg', alt='')
-                  li
-                    // Excerpt
-                    article.box.excerpt
-                      header
-                        h3
-                          a(href='#') even more images
-                      a.image.fit(href='#')
-                        img(src='src/images/pic06.jpg', alt='')
+                  each product, i in products
+                    if(product.featured)
+                      li
+                        // Excerpt
+                        article.box.excerpt
+                          header
+                            h3
+                              a(href='#') #{product.title}
+                          a.image.fit(href='#')
+                            img(src='#{product.images[0].src}', alt='')
       // Footer
       #footer-wrapper
         #footer.container

@@ -1172,6 +1172,10 @@
 		margin-bottom: 2em;
 	}
 
+	.text-right{
+		text-align: right;
+	}
+
 	br.clear {
 		clear: both;
 	}

@@ -14,7 +14,7 @@ const products = [
         title:'Custom Onsie Prints',
         images:[
             {
-                src:'src/images/onsie.jpg',
+                src:'src/images/onesie.jpg',
                 alt:'Onsie cup with decal'
             }
         ],
